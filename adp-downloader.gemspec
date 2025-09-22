@@ -3,10 +3,15 @@ lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "adp-downloader/version"
 
+build_date = begin
+  date = `git show -s --format=%cI HEAD 2>/dev/null`.to_s.strip
+  date.empty? ? Time.now.utc.strftime("%Y-%m-%d") : date.split('T').first
+end
+
 Gem::Specification.new do |s|
   s.name          = "adp-downloader"
   s.version       = ADPDownloader::VERSION
-  s.date          = `git show -s --format=%cI head | cut -d 'T' -f1`
+  s.date          = build_date
   s.authors       = ["Anderson Mesquita (andersonvom)"]
   s.email         = "andersonvom@gmail.com"
 

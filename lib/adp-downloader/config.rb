@@ -33,7 +33,7 @@ module ADPDownloader
 
       def read_cookie_file
         cookie_file = "cookie.txt"
-        unless File.exists? cookie_file
+        unless File.exist? cookie_file
           puts "Please create a file called 'cookie.txt' in this directory and"
           puts "paste the value of the SMSESSION cookie in it."
           exit 1

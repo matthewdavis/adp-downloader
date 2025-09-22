@@ -32,7 +32,7 @@ module ADPDownloader
     end
 
     def downloaded?(statement)
-      File.exists? statement.pdf
+      File.exist? statement.pdf
     end
 
     def download_or_skip_statement(statement)
