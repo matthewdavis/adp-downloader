@@ -3,7 +3,13 @@ Changelog
 
 ## Unreleased
 
-* -
+* Nothing yet.
+
+
+## 0.4.1 - 2025-09-22
+
+* Restore compatibility with Ruby 3.4 by replacing deprecated `File.exists?` calls.
+* Allow gem builds without git metadata by defaulting the gemspec date to the current timestamp.
 
 
 ## 0.4.0
